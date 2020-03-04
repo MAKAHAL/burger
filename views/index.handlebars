@@ -1,10 +1,23 @@
 <div class="container">
-	<div class="row">
-		<div class="col-md-12 text-center" id="top-bar">
-			<img id="logo" src="../public/assets/img/burger.png" alt="burger" />
-			<h1> Eat-Da-Burger! </h1>
-		</div>
-		<div class="col-md-6 text-center" class="task">
+	<img id="burger-image" src="https://image.shutterstock.com/image-vector/hamburger-cartoon-vector-illustration-isolated-600w-257426938.jpg">
+	<h2 class="heading">Eat-Da-Burger!</h2>
+	<style>
+		#burger-image{
+			height: 20%;
+			width: 20%;
+		margin-left: 37%;
+		}
+		.heading{
+			background-color: rgb(226, 193, 102);
+			text-align: center;
+			height: 30%;
+			width: 50%;
+			margin-left: 23%;
+		}
+		
+	</style>
+
+	<div class="col-md-6 text-center" class="task">
 			<div class="row">
 			  {{#each burger_data}}
 			  	{{#unless this.devoured}}
@@ -32,7 +45,6 @@
 		</div>
 	</div>
 </div>
-
 <div class="container">
 	<div class="row">
 		<div class="col-md-12 text-center enter_section">
@@ -40,7 +52,7 @@
 				<input type="text" class="form-control" name="burger_name" value="" id="enter_text">
 				<button type="submit" class="btn btn-primary" id="text-enter-button">Submit</button>
 			</form>
-			<p>Enter a burger you want.</p>
+			<p>Enter a burger you want to eat Click the "Submit" button.</p>
 		</div>
 	</div>
 </div>
