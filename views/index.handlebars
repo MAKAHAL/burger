@@ -1,4 +1,4 @@
-<div class="container">
+<div class="burgers">
 	<img id="burger-image" src="https://image.shutterstock.com/image-vector/hamburger-cartoon-vector-illustration-isolated-600w-257426938.jpg">
 	<h2 class="heading">Eat-Da-Burger!</h2>
 	<style>
@@ -16,15 +16,43 @@
 		}
 		
 	</style>
+  <div class="adder">
+<h2>Add a Burger</h2>
+<form class="create-form" action="/burgers/create" method="POST">
 
-	<div class="col-md-6 text-center" class="task">
+  <div class="form-group">
+    <label for="burg">Burger Name:</label>
+    <input type="text" id="enter_text" name="burger_name" value="">
+    <button id="text-enter-button"class="btn" type="submit">submit</button>
+</form>
+  </div>
+
+  
+  <style> .btn {
+  background-color: red; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.btn {font-size: 10px;}
+
+
+  </style>
+</form>
+</div>
+ 	<div class="col-md-6 text-center" class="task">
 			<div class="row">
 			  {{#each burger_data}}
 			  	{{#unless this.devoured}}
 				<div class="col-md-9 text-center">
 					<pre>{{this.id}}. {{this.burger_name}}
 					</pre>
-				  		<!-- {{this.Date}} -->
+				
 				</div>
 				<div class="col-md-3 text-center">
 					<form class="devour-form button-size">
@@ -45,14 +73,4 @@
 		</div>
 	</div>
 </div>
-<div class="container">
-	<div class="row">
-		<div class="col-md-12 text-center enter_section">
-			<form action="/burgers/create" method="POST">
-				<input type="text" class="form-control" name="burger_name" value="" id="enter_text">
-				<button type="submit" class="btn btn-primary" id="text-enter-button">Submit</button>
-			</form>
-			<p>Enter a burger you want to eat Click the "Submit" button.</p>
-		</div>
-	</div>
-</div>
+
