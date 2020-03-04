@@ -1,5 +1,11 @@
 var orm = require("../config/orm.js");
 
+
+// //function Burger(name) {
+//   this.name = name;
+//   this.devoured = false;
+// }
+
 var burger = {
   all: function(cb) {
     orm.all("burgers", function(res) {
@@ -7,8 +13,22 @@ var burger = {
     });
   },
   create: function(name, cb) {
+  //   Burger.create = function (burger) {
+  //     return new Promise((resolve, reject) => {
+  //         orm.insertOne("BURGERS", {
+  //             burger_name: burger.name,
+  //             devoured: burger.devoured
+  //         }).then(results => {
+  //             // Get db generated ID
+  //             burger.id = results.insertId;
+  //             resolve(burger.id);
+  //         }).catch(() => {
+  //             reject("Could not add burger");
+  //         });
+  //     });
+  // };
     orm.create("burgers", [
-      "burgers", "devoured"
+      "burger_name", "devoured"
     ], [
       name, false
     ], cb);

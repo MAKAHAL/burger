@@ -1,10 +1,10 @@
 
-require("dotenv").config();
+// require("dotenv").config();
 
 var mysql = require("mysql");
-if (process.env.JAWSDB_MARIA_URL) {
-  connection = mysql.createConnection(process.env.JAWSDB_MARIA_URL);
-} else {
+// if (process.env.JAWSDB_MARIA_URL) {
+//   connection = mysql.createConnection(process.env.JAWSDB_MARIA_URL);
+// } else {
 
 var connection = mysql.createConnection({
   host: "localhost",
@@ -13,7 +13,7 @@ var connection = mysql.createConnection({
   password: "Makah1998",
   database: "burgers_db"
 });
-};
+
 
 
 connection.connect(function(err) {
