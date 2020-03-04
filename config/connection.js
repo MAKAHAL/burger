@@ -3,7 +3,7 @@
 
 var mysql = require("mysql");
 if (process.env.JAWSDB_MARIA_URL) {
-  connection = mysql.createConnection(process.env.JAWSDB_MARIA_URL);
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
 
 var connection = mysql.createConnection({
