@@ -10,9 +10,9 @@ router.get("/", function(req, res) {
 
 router.get("/burgers", function(req, res) {
   // express callback response by calling burger.selectAllBurger
-  burger.all(function(burgerData) {
+  burger.all(function(burger_data) {
     // wrapper for orm.js that using MySQL query callback will return burger_data, render to index with handlebar
-    res.render("index", { burger_data: burgerData });
+    res.render("index", { burger_data: burger_data });
   });
 });
 
@@ -35,6 +35,18 @@ router.put("/burgers/:id", function(req, res) {
     console.log(result);
     // Send back response and let page reload from .then in Ajax
     res.sendStatus(200);
+  });
+});
+router.delete("/api/burgers/:id", function(req, res) {
+  var condition = "id = " + req.params.id;
+
+  burger.delete(condition, function(result) {
+      if (result.affectedRows == 0) {
+          // If no rows were changed, then the ID must not exist, so 404
+          return res.status(404).end();
+      } else {
+          res.status(200).end();
+      }
   });
 });
 

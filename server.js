@@ -4,9 +4,8 @@ var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
 var app = express();
 
-// var port = process.env.PORT || 3000;
-
-
+var PORT = process.env.PORT || 3000;
+// var port = 3000;
 // Serve static content for the app from the "public" directory in the application directory.
 // app.use(express.static("public"));
 app.use(express.static(process.cwd() + "/public"));
@@ -26,8 +25,7 @@ app.use("/", routes);
 
 
 
-const PORT = process.env.PORT || 4000
-
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`)
-})
+app.listen(PORT, function() {
+    // Log (server-side) when our server has started
+    console.log("Server listening on: http://localhost:" + PORT);
+  });

@@ -1,5 +1,5 @@
 -- INSERT INTO burgers (burger_name, devoured) VALUES ('cheeseburger');
-USE burgers_db;
+
 INSERT INTO burgers (burger_name, devoured) VALUES ('chicken burger');
 
 INSERT INTO burgers (burger_name, devoured) VALUES ('beef Burger');
