@@ -15,7 +15,7 @@ var connection = mysql.createConnection({
 });
 
 };
-var mysql = require('mysql');
+
 connection.connect(function(err) {
   if (err) {
     console.error("error connecting: " + err.stack);
